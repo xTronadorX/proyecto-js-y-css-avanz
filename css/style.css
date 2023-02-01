@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Martian+Mono:wght@200;400;700&display=swap");
+
+/* body  font-family: 'Cabin', sans-serif;
+titles   font-family: 'Martian Mono', monospace; */
+
+/* --------------------variables----------------------------- */
+
+:root {
+    --white: #fff;
+    --gray: rgb(188, 184, 184);
+    --colorFondo: hsl(334, 66%, 21%);
+    --colorRed: hsl(338, 85%, 46%);
+    --colorYellow: hsl(39, 100%, 63%);
+    --colorYellowlight: hsl(39, 100%, 90%);
+    --colorBeige: rgb(230, 221, 196);
+    --colorGreen: hsl(178, 60%, 32%);
+    --colorDarkGreen: hsl(178, 60%, 20%);
+    --colorGreenlight:rgb(27, 171, 135);
+    --colorGreenRgba: rgba(33, 131, 127, 0.5);
+    --colorDarkGreenRgba: rgba(20, 82, 80, 0.7);
+    --colorLightBlue: hsl(187, 62%, 66%);
+    --colorDarkBlue:rgb(24, 28, 48);
+    --colorBlack:rgb(6, 6, 6);
+}
+
+/* ----------------- Resets and general styles ---------------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    font-family: "Cabin", sans-serif;
+    margin: 0px auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Martian Mono", monospace;
+}
+
+a {
+    text-decoration: none;
+}
+
+header,
+main,
+footer,
+nav,
+section,
+section article,
+header div,
+footer div,
+.mainHistory section div,
+#mainGames,
+#mainGames div,
+.puzzle div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* -----------------------animaciones---------------------------- */
+
+@keyframes animacionH2 {
+    0% {
+        color: var(--colorRed);
+        padding-left: 0px;
+    }
+
+    25%{
+        color:var(--colorYellow);
+
+    }
+
+    50% {
+        color: var(--colorGreen);
+        padding-left: 80%;
+    }
+
+    100% {
+        color: var(--colorLightBlue);
+        padding-left: 0px;
+    }
+}
+
+@keyframes moving {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+
+/* -----------------------------header----------------------------- */
+
+header {
+    flex-direction: column;
+}
+
+/* -------nav---------- */
+
+nav {
+    justify-content: space-between;
+    width: 100%;
+    height: 10vh;
+    background-color: var(--colorGreenlight);
+    padding: 0px 50px;
+}
+
+nav button,
+main section article button,
+#reiniciar {
+    width: 150px;
+    height: 50px;
+    margin: 0px 20px;
+    border-radius: 15px;
+    text-transform: uppercase;
+    background-color: var(--colorGreen);
+    box-shadow: 6px 6px 15px var(--colorYellowlight);
+    cursor: pointer;
+}
+
+nav button a,
+main section article button a {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 2px;
+}
+
+/* ----div header---- */
+
+header > div {
+    width: 100%;
+    height: 60vh;
+    background-image: url(../assets/imagenes/codigo.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header div h1 {
+    text-transform: uppercase;
+    font-size: min(3vw + 1.5rem);
+    color: var(--colorDarkBlue);
+    text-shadow: 0px 0px 15px var(--colorFondo);
+    text-align: center;
+}
+
+/* --------------------------main----------------------------------- */
+
+main {
+    height: auto;
+    min-height: 100vh;
+    background-color: var(--colorFondo);
+    flex-direction: column;
+}
+
+main h2 {
+    font-size: min(2vw + 1rem);
+    width: 100%;
+    margin-bottom: 10%;
+    color: var(--colorGreen);
+    animation: animacionH2 20s linear infinite;
+}
+
+main section {
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+main section article {
+    background-color: var(--colorBeige);
+    width: 25%;
+    min-width: 300px;
+    height: 25vw;
+    min-height: 300px;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    border: 10px double var(--colorRed);
+}
+
+main section article img {
+    width: 90%;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 1px 1px 5px var(--colorFondo), -1px -1px 5px var(--colorFondo),
+        5px 5px 20px var(--colorYellowlight),
+        -5px -5px 20px var(--colorYellowlight);
+}
+
+main section article button {
+    margin-bottom: 20px;
+    background-color: var(--colorFondo);
+    box-shadow: none;
+}
+
+main section article button a {
+    text-transform: initial;
+}
+
+/* --------------------------footer----------------------------------- */
+
+footer {
+    width: 100%;
+    height: 18vh;
+    justify-content: space-between;
+    padding: 0px 30px;
+    background-image: linear-gradient(
+        var(--colorGreenRgba),
+        var(--colorDarkGreenRgba)
+    );
+}
+
+footer div {
+    text-transform: uppercase;
+    width: 20%;
+    text-align: center;
+}
+
+footer img {
+    width: 100px;
+    margin-right: 50px;
+}
+
+/* ----------------------------PAGINA HISTORIA------------------------ */
+
+.mainHistory section div {
+    margin: 40px;
+}
+
+.mainHistory h3 {
+    color: var(--colorBlack);
+    width: 50vw;
+    text-align: center;
+    font-size: min(1vw + 1rem);
+    padding: 20px;
+}
+
+.mainHistory .h3size {
+    width: 30vw;
+}
+
+.mainHistory .p3size {
+    width: 70vw;
+}
+
+.mainHistory p {
+    color: var(--gray);
+    width: 50vw;
+    padding: 20px;
+}
+
+.sectionVideo {
+    width: 100%;
+    flex-direction: column;
+    margin: 10vh;
+}
+
+#video {
+    width: auto;
+    height: auto;
+}
+
+.sectionVideo h3 {
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+/* ----------------------------PAGINA JUEGO------------------------ */
+
+
+#mainGames h2 {
+    padding-top: 200px;
+    color: var(--colorYellow);
+    font-size: min(1vw + 0.7rem);
+    animation: moving 15s linear infinite;
+}
+
+#mainGames > div {
+    align-items: flex-start;
+    width: 100%;
+    height: 60vh;
+}
+
+#mainGames > div div {
+    width: 15%;
+    min-width: 200px;
+    background-image: linear-gradient(
+        var(--colorLightBlue),
+        var(--colorGreen),
+        var(--colorDarkGreen),
+        var(--colorGreen),
+        var(--colorDarkGreen),
+        var(--colorLightBlue)
+    );
+    text-align: center;
+    height: 500px;
+    margin: 3px;
+    color: var(--colorYellow);
+    font-size: min(0.5vw + 0.7rem);
+}
+
+#mainGames > div img {
+    height: 500px;
+    width: 100%;
+}
+
+#reiniciar {
+    font-size: min(0.5vw + 0.5rem);
+    color: var(--colorYellow);
+    margin-bottom: 50px;
+    width: 25%;
+    letter-spacing: 5px;
+    font-weight: bold;
+}
